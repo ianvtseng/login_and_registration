@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Registration</h1>
+    <form action="/register" method="post">
+      {% csrf_token %}
+      <label>
+        First Name: <input type="text" name="first_name" value="">
+      </label>
+      <label>
+        Last Name: <input type="text" name="last_name" value="">
+      </label>
+      <label>
+        Email: <input type="text" name="email" value="">
+      </label>
+      <label>
+        Password: <input type="text" name="password" value="">
+      </label>
+      <label>
+        Confirm Password: <input type="text" name="confirm-pw" value="">
+      </label>
+      <input type="submit" name="register" value="Register">
+    </form>
+    <h1>Login</h1>
+    <form action="/login" method="post">
+      {% csrf_token %}
+      <label>
+        Email: <input type="text" name="email" value="">
+      </label>
+      <label>
+        Password: <input type="text" name="password" value="">
+      </label>
+      <input type="submit" name="login" value="Login">
+    </form>
+    <ul>
+    {% for user in users%}
+      <li>
+      {{ user.id }},
+      {{ user.first_name }}
+      {{ user.last_name }},
+      {{ user.password }}
+      </li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>

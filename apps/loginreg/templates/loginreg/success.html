@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'loginreg/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'loginreg/css/loginreg.css' %}">
+    <title>Success</title>
+  </head>
+  <body>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h1>Success</h1>
+          <h2>{{request.session.first_name}} {{request.session.last_name}} has successfully {{ request.session.welcome_message }}</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
